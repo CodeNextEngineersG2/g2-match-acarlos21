@@ -115,7 +115,7 @@ function setup() {
   spriteX = 70;
   spriteY = 95;
   imageArray = [backImage, boltImage, cloudImage, sunImage, moonImage, smileyImage, heartImage,transitionImage1, transitionImage2, transitionImage3];
-
+  resizeImage();
 }
 
 /*
@@ -153,7 +153,9 @@ function setup() {
    image.resize(40, 50);
  */
 function resizeImages() {
-  
+  for(var i = 0; i < imageArray.length; i++) {
+    imageArray[i].resize(spriteWidth, spriteHeight);
+  }
 }
 
 /*
