@@ -116,6 +116,11 @@ function setup() {
   spriteY = 95;
   imageArray = [backImage, boltImage, cloudImage, sunImage, moonImage, smileyImage, heartImage,transitionImage1, transitionImage2, transitionImage3];
   resizeImage();
+  resizeImages();
+  createSprites();
+  spriteArray = [boltSprite1, boltSprite2, cloudSprite1, cloudSprite2,
+               sunSprite1, sunSprite2, moonSprite1, moonSprite2,
+               smileySprite1, smileySprite2, heartSprite1, heartSprite2];
 }
 
 /*
@@ -170,7 +175,20 @@ function resizeImages() {
      mySprite = createSprite(0, 0, spriteWidth, spriteHeight);
    }
  */
-
+function createSprites() {
+  boltSprite1 = (0,0, spriteWidth, spriteHeight);
+  boltSprite2 = (0,0, spriteWidth, spriteHeight);
+  cloudSprite1 = (0,0, spriteWidth, spriteHeight);
+  cloudSprite2 = (0,0, spriteWidth, spriteHeight);
+  sunSprite1 = (0,0, spriteWidth, spriteHeight);
+  sunSprite2 = (0,0, spriteWidth, spriteHeight);
+  moonSprite1 = (0,0, spriteWidth, spriteHeight);
+  moonSprite2 = (0,0, spriteWidth, spriteHeight);
+  smileySprite1 = (0,0, spriteWidth, spriteHeight);
+  smileySprite2 = (0,0, spriteWidth, spriteHeight);
+  heartSprite1 = (0,0, spriteWidth, spriteHeight);
+  heartSprite2 = (0,0, spriteWidth, spriteHeight);
+}
 
 /*
  * function addAnimations()
