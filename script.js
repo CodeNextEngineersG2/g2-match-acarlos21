@@ -246,7 +246,11 @@ function placeSprites(){
  * spriteOne and spriteTwo to sprites in the order tht they are clicked. When
  * two sprites have been clicked, the function calls checkMatch().
  */
-
+function activateSprite(s){
+  s.onMousePressed = function() {
+    
+  }
+}
 
 
 /*
