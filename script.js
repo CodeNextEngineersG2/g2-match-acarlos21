@@ -44,7 +44,7 @@ var resetButton, musicButton;
  */
 function loadImages() {
   backImage = loadImage("assets/img/back.png");
-  boltImage = loadImage("assets/img/back.png");
+  boltImage = loadImage("assets/img/bolt.png");
   cloudImage = loadImage("assets/img/cloud.png");
   sunImage = loadImage("assets/img/sun.png");
   moonImage = loadImage("assets/img/moon.png");
@@ -206,6 +206,7 @@ function createSprites() {
  * function calls activateSprite(s) with each sprite as input.
  */
 function addAnimations(){
+  console.log("Did I even rach this part?");
   var animations = [boltAnimation, boltAnimation, cloudAnimation, cloudAnimation, sunAnimation, sunAnimation, moonAnimation, moonAnimation, smileyAnimation, smileyAnimation,
   heartAnimation,heartAnimation];
   for(var i = 0; i < spriteArray.length; i++){
@@ -213,6 +214,7 @@ function addAnimations(){
     spriteArray[i].animation.frameDelay = 10;
     spriteArray[i].animation.looping = false;
     spriteArray[i].animation.playing = false;
+    activateSprite(spriteArray[i]);
   }
 }
 
@@ -246,11 +248,27 @@ function placeSprites(){
  * spriteOne and spriteTwo to sprites in the order tht they are clicked. When
  * two sprites have been clicked, the function calls checkMatch().
  */
-function activateSprite(s){
+
+ //Functions are hoisted to the top of the script; Variables are not hoisted
+
+function activateSprite(s) {
   s.onMousePressed = function() {
-    
+    console.log("hello!");
+    if(spritesActive && s.animation.getFrame() !== s.animation.getLastFrame()){
+      if(firstsprite === undefined)
+        firstsprite = s;
+        // flipSound.play();
+        s.animation.goToFrame(s.animation.getLastFrame());
+    }
+    else if(s !== firstsprite){
+      secondsprite =s;
+      //flipSound.play();
+      s.animation.goToFrame(s.animation.getLastFrame());
+
+      }
+    }
   }
-}
+
 
 
 /*
